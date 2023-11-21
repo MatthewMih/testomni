@@ -240,6 +240,39 @@
   <div class="columns is-centered has-text-centered">
     <div class="column is-six-fifths">
       <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Performance</h2>
+      <centering>
+        <div style="display: flex;">
+
+          <img id="teaser" width="40%" src="images/radar.svg">   
+          <table class="center" cellspacing="2" border="1" width=30% height=20% cellpadding="5">
+            <caption>Visual Dialog Performance </caption>
+            <tr>
+                <th>Model</th>
+                <td>NDCG</td>
+                <td>MRR</td>
+                <td>Recall@1</td>
+                <td>Recall@5</td>
+                <td>Recall@10</td>
+            </tr>
+            <tr>
+                <th>OmniFusion</th>
+                <td>25.91</td>
+                <td>10.78</td>
+                <td>4.74</td>
+                <td>13.80</td>
+                <td>20.53</td>
+            </tr>
+            <tr>
+                <th>LLaVA-13B</th>
+                <td>24.74</td>
+                <td>8.91</td>
+                <td>2.98</td>
+                <td>10.80</td>
+                <td>18.02</td>
+            </tr>
+        </table>
+      </div>
+      </centering>  
     </div>
   </div>
 
@@ -418,7 +451,7 @@
       {
         "description": "teeth",
         "turns": [
-          ["User",  "Are there wisdom teeth that needs to be removed in this x-ray image?​", "static/images/teeth.jpeg"],
+          ["User",  "Are there wisdom teeth that need to be removed in this x-ray image?​", "static/images/teeth.jpeg"],
           ["OmniFusion", "Yes, there are wisdom teeth that need to be removed in the x-ray image."],
           ["User", "How many of them are needed to be removed?"],
           ["OmniFusion", "There are three wisdom teeth that need to be removed."],
