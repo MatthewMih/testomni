@@ -386,7 +386,7 @@
       if (imageSrc) {
         var img = document.createElement("img");
         img.src = imageSrc;
-        img.style = "max-width: 100%; max-height: 300px;"; // Adjust the style as needed
+        img.style = "max-width: 100%; max-height: 600px;"; // Adjust the style as needed
         para.appendChild(img);
       }
 
@@ -416,19 +416,28 @@
     // 
     const conversations = [
       {
+        "description": "teeth",
+        "turns": [
+          ["User",  "Are there wisdom teeth that needs to be removed in this x-ray image?​", "static/images/teeth.jpeg"],
+          ["OmniFusion", "Yes, there are wisdom teeth that need to be removed in the x-ray image."],
+          ["User", "How many of them are needed to be removed?"],
+          ["OmniFusion", "There are three wisdom teeth that need to be removed."],
+          ["User", "Which wisdom tooth is hardest to remove?"],
+          ["OmniFusion", "The third wisdom tooth from the left is the hardest to remove."],
+        ]
+      },
+      {
         "description": "spb",
         "turns": [
-          // ["Description", "Please read the description and answer the question."],
-          ["User", "", "static/images/spb-map.png"],
-          ["User", "What is the city depicted the map?​"],
+          ["Description", "Please read the description and answer the question."],
+          ["User",  "What is the city depicted on the map?​", "static/images/spb-map.png"],
           ["OmniFusion", "The map depicts St. Petersburg."]
         ]
       },
       {
         "description": "bread",
         "turns": [
-          ["User", "", "static/images/bread.jpg"],
-          ["User", "Is it suitable to eat?"],
+          ["User", "Is it suitable to eat?", "static/images/bread.jpg"],
           ["OmniFusion", "No, it is not suitable to eat."],
           ["User", "Why not? Explain please"],
           ["OmniFusion", "The piece of toast on the plate is covered in mold, when is a sign of food spoilage or contamination. Eating moldy food can lead to various health issues, such as allergic reactions, digestive problems, and infections. In this case, it is best to discard the moldy toast and avoid consuming it."]
@@ -438,10 +447,9 @@
         "description": "design",
         "turns": [
           // ["Description", "Please read the description and answer the question."],
-          ["User", "", "static/images/design.png"],
-          ["User", "In which direction is the master bedroom located? (choose from North, South, West, East)​"],
+          ["User", "In which direction is the master bedroom located? (choose from North, South, West, East)​", "static/images/design.png"],
           ["OmniFusion", "The master bedroom is located in the South direction."],
-          ["User", "In which direction is the master bedroom located? (choose from North, South, West, East)​"],
+          ["User", "And in which corner of the image is this bedroom located? (upper left, upper right, lower left, lower right)​"],
           ["OmniFusion", "The bedroom is located in the upper right corner of the image."]
         ]
       },
@@ -449,12 +457,11 @@
         "description": "iqtest",
         "turns": [
           // ["Description", "Please read the description and answer the question."],
-          ["User", "", "static/images/iqtest.png"],
           ["User", "Here are three sub images arranged in a 2-by-2 matrix. First, look at the two images in the first column, in the top left and " +
           "bottom left. Then, find out the pattern in the first column " +
           "based on the left two images. Next, use the found pattern " + 
           "and the image in the top right to infer the missing figure. " +
-          "Finally, describe what would the missing image look like?​"],
+          "Finally, describe what would the missing image look like?​", "static/images/iqtest.png"],
           ["OmniFusion", "The missing image in the top right corner of the matrix would be a star with a single point, which is the pattern observed in the first column. This pattern can be inferred from the two images in the top left and bottom left corners of the matrix. The missing image would be a star with a single point, which completes the pattern of stars in the first column."]
         ]
       },
