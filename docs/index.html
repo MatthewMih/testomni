@@ -178,11 +178,10 @@
             <p>
               Instruction tuning large language models (LLMs) using machine-generated instruction-following data has improved zero-shot capabilities on new tasks in the language domain, but the idea is less explored in the multimodal field.
               <ol type="1">
-                <li><b>Multimodal Instruct Data</b>. <span style="font-size: 95%;">We present the first attempt to use <a href="https://openai.com/research/gpt-4">language-only GPT-4</a> to generate multimodal language-image instruction-following data. </span></li>
-                <li><b>OmniFusion Model</b>. <span style="font-size: 95%;">We introduce <it><b>OmniFusion</b> (<b>L</b>arge <b>L</b>anguage-<b>a</b>nd-<b>V</b>ision <b>A</b>ssistant)</it>, an end-to-end trained large multimodal model that connects a vision encoder and LLM for general-purpose visual and language understanding.</li>
-                <li><b>Performance</b>. <span style="font-size: 95%;">Our early experiments show that OmniFusion demonstrates impressive multimodel chat abilities, sometimes exhibiting the behaviors of multimodal GPT-4 on unseen images/instructions, and yields a 85.1% relative score compared with GPT-4 on a synthetic multimodal instruction-following dataset.
-                  When fine-tuned on <a href="https://scienceqa.github.io/">Science QA</a>, the synergy of OmniFusion and GPT-4  achieves a new state-of-the-art accuracy of 92.53%.</li>
-                <li><b>Open-source</b>. <span style="font-size: 95%;">We make GPT-4 generated visual instruction tuning data, our model and code base publicly available.</li>
+                <li><b>Multimodal Instruct Data</b>. <span style="font-size: 95%;">Для создания своей мультимодальной модели, мы решили взять самые лучшие и наиболее стабильные практики — сильная LLM, мощный адаптер, спецтокены новых модальностей и многоступенчатое инструктивное обучение с постепенной разморозкой LLM. </li>
+                <li><b>OmniFusion Model</b>. <span style="font-size: 95%;">We introduce <it><b>OmniFusion</b></it>, an end-to-end trained large multimodal model that connects a vision encoder and LLM for general-purpose visual and language understanding.</li>
+                <li><b>Performance</b>. <span style="font-size: 95%;">Our early experiments show that OmniFusion demonstrates impressive multimodel chat abilities, sometimes exhibiting the behaviors of multimodal GPT-4-V on unseen images/instructions.
+                  When fine-tuned on <a href="https://scienceqa.github.io/">Science QA</a>, the synergy of OmniFusion accuracy of 92.53%.</li>
               </ol>  
            </p>
   
@@ -247,35 +246,6 @@
   <!--/ Results. -->    
 <div class="container is-max-desktop">
 
-
-  <!-- Grounedtext2img. -->
-  <div class="columns is-centered">
-    <div class="column is-full-width">
-      <h2 class="title is-4"><img id="painting_icon" width="4%" src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"> <span style="font-size: 100%;">Visual Chat:</span> Towards building multimodal GPT-4 level chatbot  </h2>
-      
-      <div>
-        <a href="https://plotly.com/~lichunyuan24/5/?share_key=d78QObaCAYCIy8PJpe3gd1" target="_blank" title="omnifusion_gpt4_pie" style="display: block; text-align: center;">  <img id="painting_icon" width="90%" src="images/pie_omnifusion_gpt4.png"> </a>
-
-    </div>
-
-    <p style="font-family:Times New Roman"><b>An evaluation dataset with 30 unseen images is constructed: each image is assocaited with three types of instructions: conversation, detailed description and complex reasoning. This leads to 90 new language-image instructions, on which we test OmniFusion and GPT-4, and use GPT-4 to rate their responses from score 1 to 10. The summed score and relative score per type is reported. Overall, OmniFusion achieves 85.1% relative score compared with GPT-4, indicating the effectinvess of the proposed self-instruct method in multimodal settings</b>               
-    </div>
-  </div>
-
-  <!-- Grounedtext2img. -->
-  <div class="columns is-centered">
-    <div class="column is-full-width">
-      <h2 class="title is-4"> <img id="painting_icon" width="3%" src="https://scienceqa.github.io/img/logo.png"><span style="font-size: 100%;"> Science QA:</span> New SoTA with the synergy of OmniFusion with GPT-4</h2>
-      
-      <div>
-        <a href="https://plotly.com/~lichunyuan24/1/?share_key=v4opE3TJpxqQ08RYsDD4iv" target="_blank" title="Plot 1" style="display: block; text-align: center;"><img id="painting_icon" width="65%" src="images/bar_omnifusion_gpt4_scienceqa.png"></a>
-        <script data-plotly="lichunyuan24:1" sharekey-plotly="v4opE3TJpxqQ08RYsDD4iv" src="https://plotly.com/embed.js" async></script>
-    </div>
-        <p style="font-family:Times New Roman"><b>OmniFusion alones achieve 90.92%. We use the text-only GPT-4 as the judge, to predict the final answer based on its own previous answers and the OmniFusion answers. This "GPT-4 as judge" scheme yields a new SOTA 92.53%.</b>
-              
-    </div>
-  </div>
-</section>
 
 <section class="section">
 
@@ -369,14 +339,6 @@
 <b>Usage and License Notices</b>: The data, code and checkpoint is intended and licensed for research use only. They are also restricted to uses that follow the license agreement of CLIP. 
 </p>
 
-      <p>
-      <a href='https://github.com/Computer-Vision-in-the-Wild/'><img id="painting_icon" width="10%" src="https://avatars.githubusercontent.com/u/97258247?s=200&v=4"></a> 
-      Related Links: 
-      <a href='https://react-vl.github.io/'>[REACT]</a>  
-      <a href='https://gligen.github.io/'>[GLIGEN]</a> 
-      <a href='https://github.com/Computer-Vision-in-the-Wild/'>[Computer Vision in the Wild (CVinW)]</a> 
-      <a href='https://instruction-tuning-with-gpt-4.github.io/'>[Insutrction Tuning with GPT-4]</a>      
-      </p>    
     </div>
   </section>
 
@@ -451,79 +413,46 @@
     // 
     const conversations = [
       {
-        "description": "monalisa",
+        "description": "spb",
         "turns": [
           // ["Description", "Please read the description and answer the question."],
-          ["User", "", "static/images/monalisa.jpg"],
-          ["User", "Do you know who drew this painting?​"],
-          ["OmniFusion",
-            "The painting depicts a woman, commonly believed to be Mona Lisa, the famous artwork by Leonardo da Vinci. " +
-            "It is a portrait painting that showcases the woman's enigmatic smile and has become one of the most famous and iconic art pieces in the world. " +
-            "The original work is displayed in the Louvre Museum in Paris, and it is known for its intricate details, use of oil paint, and the artist's innovative techniques that contributed to its enduring appeal and mystery.​​"
+          ["User", "", "static/images/spb-map.png"],
+          ["User", "What is the city depicted the map?​"],
+          ["OmniFusion", "The map depicts St. Petersburg."]
+        ]
+      },
+      {
+        "description": "bread",
+        "turns": [
+          ["User", "", "static/images/bread.jpg"],
+          ["User", "Is it suitable to eat?"],
+          ["OmniFusion", "No, it is not suitable to eat."],
+          ["User", "Why not? Explain please"],
+          ["OmniFusion", "The piece of toast on the plate is covered in mold, when is a sign of food spoilage or contamination. Eating moldy food can lead to various health issues, such as allergic reactions, digestive problems, and infections. In this case, it is best to discard the moldy toast and avoid consuming it."]
           ]
+      },
+      {
+        "description": "design",
+        "turns": [
+          // ["Description", "Please read the description and answer the question."],
+          ["User", "", "static/images/design.png"],
+          ["User", "In which direction is the master bedroom located? (choose from North, South, West, East)​"],
+          ["OmniFusion", "The master bedroom is located in the South direction."],
+          ["User", "In which direction is the master bedroom located? (choose from North, South, West, East)​"],
+          ["OmniFusion", "The bedroom is located in the upper right corner of the image."]
         ]
       },
       {
-        "description": "monalisa with dog head",
+        "description": "iqtest",
         "turns": [
-          ["User", "", "static/images/monalisa-fun.jpg"],
-          ["User", "Do you know who drew this painting?​"],
-          ["OmniFusion", "The painting depicts a dog in a humorous situation, where it appears to be wearing a woman's dress and standing in front of a landscape. Although the artist of the painting is not explicitly identified, it could be a reference to the famous artist Da Vinci, known for his artistic works, including the Mona Lisa. The painting is likely a creative and comical take on the traditional portrait style, replacing a human figure with a dog dressed in a woman's clothing, making it an interesting and amusing visual piece.​"]
-        ]
-      },
-      {
-        "description": "Titanic Rose and Jack",
-        "turns": [
-          ["User", "", "static/images/titanic.jpg"],
-          ["User", "What's the ending of this movie?​​"],
-          ["OmniFusion", "​In the image, a young woman is leaning on a man in front of a beautiful sunset, with both of them standing on a boat. They appear to be enjoying a romantic moment together. The scene suggests that they could be depicted as the characters Jack and Rose from the popular movie Titanic. In the movie, their romance blossoms aboard the fictional ocean liner Titanic, with the pair ultimately sharing a passionate kiss as the ship sinks into the ocean. The ending of the movie is known for its emotional and heartfelt scenes, where the characters are forced to say goodbye to each other as they are separated by the sinking ship. The image evokes a sense of romance and nostalgia, paying tribute to the iconic love story portrayed in the movie Titanic.​"]
-        ]
-      },
-      {
-        "description": "Fridge",
-        "turns": [
-          ["User", "", "static/images/fridge.jpg"],
-          ["User", "What are the meals that I can cook with these?​​"],
-          ["OmniFusion", "With the variety of food items stored in the refrigerator, you can prepare several meals. For example, you can create a fruit salad using the strawberries, blueberries, and carrots. Additionally, you can make a delicious smoothie using the fruits and vegetables, which would be a healthy and nutritious snack or breakfast option. The milk and eggs can be used to create various dishes, such as a milk-based smoothie, a baked casserole, or scrambled eggs. The juice can also be used to make a fresh fruit and juice mix or as a refreshing homemade popsicle. The possibilities are vast, and the meals you can create will depend on your preferences and dietary needs.​​"],
-          ["User", "I would like to do the fruit salad.  Show me the recipe.​"],
-          ["OmniFusion",
-            `Certainly! Here's a simple fruit salad recipe using the items in your refrigerator:​
-
-Ingredients:​
-- 2 cups fresh strawberries, sliced​
-- 1 cup fresh blueberries​
-- 1 large carrot, grated​
-- Juice of half a lemon​
-- A handful of chopped fresh parsley or mint​
-- A few ice cubes​
-- Optional: honey or maple syrup (adjust to taste)​
-
-Instructions:​
-1. In a large bowl, combine the sliced strawberries, blueberries, and carrot. Gently toss them together to mix.​
-2. Drizzle the juice of half a lemon over the fruit and vegetables to prevent them from oxidizing and add a refreshing citrus flavor.​
-3. Sprinkle the chopped fresh parsley or mint over the fruit and gently toss once more.​
-4. If desired, add a drizzle of honey or maple syrup for a touch of sweetness. Adjust the amount according to your taste preferences.​
-5. Cover the bowl and refrigerate the fruit salad for at least 30 minutes or up to a few hours. This allows the flavors to meld and creates a more refreshing salad.​
-6. Serve the fruit salad in cups or bowls, garnished with a sprinkle of fresh parsley or mint, if desired.​
-
-This fruit salad recipe is perfect for a healthy snack or side dish, and with the variety of ingredients available in your refrigerator, it should be easy to put together quickly.`]]
-      },
-      {
-        "description": "Beautiful View",
-        "turns": [
-          ["User", "", "static/images/view.jpg"],
-          ["User", "What are the things I should be cautious about when I visit here?​​"],
-          ["OmniFusion", "When visiting this peaceful location with a pier extending over a serene lake, surrounded by mountains, there are several things to be cautious about. First, pay attention to the weather conditions, as sudden changes in weather, especially strong winds or storms, can cause the water to become rough and pose risks to the stability of the pier. Second, be mindful of the structural integrity of the pier; avoid overloading it with too many people or excessive weight, as this could potentially damage the pier or cause it to collapse. Additionally, be aware of the surrounding wildlife and respect their space; do not harm or disturb them in any way. Finally, if you decide to go fishing, ensure that you adhere to any local fishing regulations and use appropriate fishing techniques to keep the lake ecosystem healthy and maintain the balance of the food chain.​​"],
-          ["User", "Compose an engaging travel blog post about my trip to this place, highlighting the beautiful sceneries, joyful experiences, and include possible anecdotes.​​"],
-          ["OmniFusion",
-            `Traveling to this picturesque location with a serene lake and mountains in the background was a refreshing and rejuvenating experience. The pier extending over the calm water provided an excellent vantage point from which to appreciate the breathtaking scenery. As I stood on the pier, I couldn't help but feel a deep connection with nature, taking a moment to soak in the peaceful atmosphere.​
-
-One of the highlights of my trip was undoubtedly the fishing experience. The area is teeming with life, and I was thrilled to land a sizeable catch, despite the modest size of the lake. The joy of fishing in such a beautiful setting was truly rewarding, and it allowed me to take a break from my busy life and truly immerse myself in the tranquility of nature.​
-
-While exploring the surrounding area, I came across a family of birds that had built a nest close to the pier, adding to the charm of the location. Interacting with the wildlife and observing their behavior was an enriching experience that I'll cherish for years to come.​
-
-In conclusion, this idyllic destination provided me with an opportunity to unwind and recharge, surrounded by mesmerizing natural beauty and the gentle sounds of water and wildlife. If you're looking for a serene escape from the hustle and bustle of everyday life, this pier overlooking the lake is the perfect place to find solace and reconnect with nature.`
-          ]
+          // ["Description", "Please read the description and answer the question."],
+          ["User", "", "static/images/iqtest.png"],
+          ["User", "Here are three sub images arranged in a 2-by-2 matrix. First, look at the two images in the first column, in the top left and " +
+          "bottom left. Then, find out the pattern in the first column " +
+          "based on the left two images. Next, use the found pattern " + 
+          "and the image in the top right to infer the missing figure. " +
+          "Finally, describe what would the missing image look like?​"],
+          ["OmniFusion", "The missing image in the top right corner of the matrix would be a star with a single point, which is the pattern observed in the first column. This pattern can be inferred from the two images in the top left and bottom left corners of the matrix. The missing image would be a star with a single point, which completes the pattern of stars in the first column."]
         ]
       },
     ];
