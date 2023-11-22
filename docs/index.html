@@ -233,51 +233,62 @@
 
 </section>
   
-
-
 <section class="section">
   <!-- Results. -->
   <div class="columns is-centered has-text-centered">
     <div class="column is-six-fifths">
       <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Performance</h2>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!--/ Results. -->    
+<div class="container is-max-desktop">
+
+
+
+<section class="section">
+  <!-- Results. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
       <div class="content has-text-justified">
         <p>
           OmniFusion demonstrates competitive to state-of-the-art performance on a range of benchmarks and in subjective evaluation on downstream tasks.
-       </p>
-
+          <centering>
+            <table class="center" style="margin-left:auto;margin-right:auto" cellspacing="2" border="1" width=80% height=10% cellpadding="5">
+              <caption>Visual Dialog Performance </caption>
+              <tr>
+                  <th>Model</th>
+                  <td>NDCG</td>
+                  <td>MRR</td>
+                  <td>Recall@1</td>
+                  <td>Recall@5</td>
+                  <td>Recall@10</td>
+              </tr>
+              <tr>
+                  <th>OmniFusion</th>
+                  <td>25.91</td>
+                  <td>10.78</td>
+                  <td>4.74</td>
+                  <td>13.80</td>
+                  <td>20.53</td>
+              </tr>
+              <tr>
+                  <th>LLaVA-13B</th>
+                  <td>24.74</td>
+                  <td>8.91</td>
+                  <td>2.98</td>
+                  <td>10.80</td>
+                  <td>18.02</td>
+              </tr>
+            </table>
+          </centering>  
+          <centering>
+            <div style="text-align: center;">
+              <img id="teaser" width="65%" class="center" src="images/radar.svg">   
+            </div>
+          </centering>
+        </p>
       </div>
-      <centering>
-        <div style="display: center;">
-          <img id="teaser" width="65%" src="images/radar.svg">   
-        </div>
-      <table class="center" style="margin-left:auto;margin-right:auto" cellspacing="2" border="1" width=40% height=20% cellpadding="5">
-        <caption>Visual Dialog Performance </caption>
-        <tr>
-            <th>Model</th>
-            <td>NDCG</td>
-            <td>MRR</td>
-            <td>Recall@1</td>
-            <td>Recall@5</td>
-            <td>Recall@10</td>
-        </tr>
-        <tr>
-            <th>OmniFusion</th>
-            <td>25.91</td>
-            <td>10.78</td>
-            <td>4.74</td>
-            <td>13.80</td>
-            <td>20.53</td>
-        </tr>
-        <tr>
-            <th>LLaVA-13B</th>
-            <td>24.74</td>
-            <td>8.91</td>
-            <td>2.98</td>
-            <td>10.80</td>
-            <td>18.02</td>
-        </tr>
-    </table>
-      </centering>  
     </div>
   </div>
 
