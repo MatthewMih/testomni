@@ -207,24 +207,24 @@
   <div class="columns is-centered">
     <div class="column is-full-width">
       <div class="content has-text-justified"> 
-        <p>
-          OmniFusion connects pre-trained <a href="https://openai.com/research/clip">CLIP ViT-L/14</a> visual encoder and large language model, using a Transformer Encoder layer. 
-          <centering>
-            <div style="text-align: center;">
-              <img id="teaser" width="100%" src="images/omnifusion_arch.png">     
-            </div>
-          </centering>  
-          We consider a two-stage instruction-tuning procedure:
-          <ul type="1">
-            <li><b>Stage 1: Pre-training for Feature Alignment</b>. <span style="font-size: 95%;">Only the projection Transformer Layer is updated, based on a subset of CC3M and COCO.</span></li>
-            <li><b>Stage 2: Fine-tuning End-to-End</b>. <span style="font-size: 95%;">Both the projection and LLM are updated using a mix of instructive data: 
+          <p>
+            OmniFusion connects pre-trained <a href="https://openai.com/research/clip">CLIP ViT-L/14</a> visual encoder and large language model, using a Transformer Encoder layer. 
             <centering>
               <div style="text-align: center;">
-                <img id="teaser" width="100%" src="images/Instructive SFT datasets.svg">     
+                <img id="teaser" width="100%" src="images/omnifusion_arch.png">     
               </div>
             </centering>  
-          </ul>
-        </p>
+            We consider a two-stage instruction-tuning procedure:
+            <ul type="1">
+              <li><b>Stage 1: Pre-training for Feature Alignment</b>. <span style="font-size: 95%;">Only the projection Transformer Layer is updated, based on a subset of CC3M and COCO.</span></li>
+              <li><b>Stage 2: Fine-tuning End-to-End</b>. <span style="font-size: 95%;">Both the projection and LLM are updated using a mix of instructive data: 
+              <centering>
+                <div style="text-align: center;">
+                  <img id="teaser" width="75%" src="images/Instructive SFT datasets.svg">     
+                </div>
+              </centering>  
+            </ul>
+          </p>
       </div>
          
     </div>
@@ -240,11 +240,16 @@
   <div class="columns is-centered has-text-centered">
     <div class="column is-six-fifths">
       <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Performance</h2>
+      <div class="content has-text-justified">
+        <p>
+          OmniFusion demonstrates competitive to state-of-the-art performance on a range of benchmarks and in subjective evaluation on downstream tasks.
+       </p>
+
+      </div>
       <centering>
         <div style="display: flex;">
-
-          <img id="teaser" width="40%" src="images/radar.svg">   
-          <table class="center" cellspacing="2" border="1" width=30% height=20% cellpadding="5">
+          <img id="teaser" width="55%" src="images/radar.svg">   
+          <table class="center" cellspacing="2" border="1" width=40% height=30% cellpadding="5">
             <caption>Visual Dialog Performance </caption>
             <tr>
                 <th>Model</th>
@@ -284,42 +289,6 @@
 
 
 <section class="section">
-
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-six-fifths">
-      <h2 class="title is-3"> Examples on Visual Instruction Following</h2>
-    </div>
-  </div>
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-         <h2 class="title is-4">Visual Reasoning on two examples from <a href="https://arxiv.org/abs/2303.08774">OpenAI GPT-4 Technical Report</a></h2>
-      </div>
-      </div>  
-
-    <div class="columns is-centered has-text-centered">
-    <div class="column is-six-fifths">
-      <img id="teaser" width="35%" src="images/cmp_ironing.png">
-      <img id="teaser" width="38%" src="images/cmp_chicken_nugget.png">
-    </div>
-    </div>  
-
-  
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-         <h2 class="title is-4">Optical character recognition (OCR)</a></h2>
-      </div>
-      </div>  
-
-    <div class="columns is-centered has-text-centered">
-    <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
-        <img id="teaser" width="32%" src="images/ocr/omnifusion_example_cvpr2023.png">
-        <img id="teaser" width="32%" src="images/ocr/omnifusion_example_cvinw_logo.png">
-        <img id="teaser" width="32%" src="images/ocr/example_omnifusion_exmaple.png">
-    </div>
-    </div>  
-
   <div class="container mt-5">
     <!-- <h2 class="text-center mb-5">Who's GPT-4's favorite? Battles between State-of-the-Art Chatbots</h2> -->
     <!-- Selection -->
@@ -419,7 +388,7 @@
       if (imageSrc) {
         var img = document.createElement("img");
         img.src = imageSrc;
-        img.style = "max-width: 100%; max-height: 600px;"; // Adjust the style as needed
+        img.style = "max-width: 80%; max-height: 500px;"; // Adjust the style as needed
         para.appendChild(img);
       }
 
@@ -475,6 +444,15 @@
           ["User", "Why not? Explain please"],
           ["OmniFusion", "The piece of toast on the plate is covered in mold, when is a sign of food spoilage or contamination. Eating moldy food can lead to various health issues, such as allergic reactions, digestive problems, and infections. In this case, it is best to discard the moldy toast and avoid consuming it."]
           ]
+      },
+      {
+        "description": "speed",
+        "turns": [
+          ["User", "What is the read of speedometer in kilometers per hour?", "static/images/speedlimit.png"],
+          ["OmniFusion", "The read of the speed meter is 50."],
+          ["User", "Does it violate the speed limit on the sign? What is the speed limit on the sign?"],
+          ["OmniFusion", "Yes. It's 45."],
+        ]
       },
       {
         "description": "design",
